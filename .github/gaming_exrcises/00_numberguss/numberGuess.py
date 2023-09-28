@@ -13,7 +13,7 @@
     # Award point to CPU.
 # Check to see if the player or CPU has >= 3 points, if so then they win.
 
-import random # Import the random module to our code. 
+import random # Import the random module to our code.
 
 # DECLARATIONS
 secretNumber = 10
@@ -32,7 +32,7 @@ print("""
       |                     |
       |                     |
       |    Guess a Number   |
-      |                     |
+      |     Aziah Hill      |
       |                     |
       *~~~~~~~~~~~~~~~~~~~~~*
     """)
@@ -53,7 +53,6 @@ while playerScore != 3 and cpuScore != 3:
 
     print(f"Player Score: {playerScore}\nCPU Score: {cpuScore}.\n")
     secretNumber = random.randint(rangeMin, rangeMax)
-    #print(secretNumber)
     # ADD CODE HERE TO CHANGE DIFFICULTY BETWEEN EACH ROUND
 
     numGuesses = 0
@@ -78,7 +77,7 @@ while playerScore != 3 and cpuScore != 3:
     if playerGuess != secretNumber:
         cpuScore += 1
         print("The CPU wins a point since you ran out of guesses.\n")
-if playerScore >= 3:
+    
     print("You've won due to scoring 3 points first!\n")
 else:
     print("You lost twin, to a computer at that man.\n")
