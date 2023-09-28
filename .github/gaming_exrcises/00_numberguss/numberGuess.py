@@ -81,4 +81,4 @@ while playerScore != 3 and cpuScore != 3:
 if playerScore >= 3:
     print("You've won due to scoring 3 points first!\n")
 else:
-    print("You lost twin, to a computer at that.\n")
+    print("You lost twin, to a computer at that man.\n")
