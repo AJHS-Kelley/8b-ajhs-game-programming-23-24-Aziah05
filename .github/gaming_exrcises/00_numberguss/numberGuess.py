@@ -43,6 +43,7 @@ print(secretNumber)
 
 # GAME LOOP
 print("You need to guess a number between 0 and 20 and you have 3 guesses.\nIf you guess it right, you get a point.\nIf you cant get it in three guess, the CPU gets a point.")
+
 # ADD CODE HERE TO CHANGE DIFFICULTY BETWEEN EACH MATCH.
 # print () an explanation of your three difficulty levels.
 # use input() to store difficulty in difficulty variable.
