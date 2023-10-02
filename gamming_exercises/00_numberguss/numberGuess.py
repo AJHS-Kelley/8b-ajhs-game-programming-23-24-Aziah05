@@ -37,17 +37,18 @@ print("""
       *~~~~~~~~~~~~~~~~~~~~~*
     """)
 
-# CPU SECRET NUMBER GENERATION
-secretNumber = random.randint(0,20)
-print(secretNumber)
 
 # GAME LOOP
 print("You need to guess a number between 0 and 20 and you have 3 guesses.\nIf you guess it right, you get a point.\nIf you cant get it in three guess, the CPU gets a point.")
 
 # ADD CODE HERE TO CHANGE DIFFICULTY BETWEEN EACH MATCH.
+# Use input() to get the difficulty. 
+# use If (easy) / elif (normal and hard) / else (default) to check difficulty, assign rangeMin, rangeMax and numAttempts. 
+
 # print () an explanation of your three difficulty levels.
 # use input() to store difficulty in difficulty variable.
 # assign values to numAttempts, rangeMin, and rangeMax based on choice
+
 
 while playerScore != 3 and cpuScore != 3:
     # pass -- Tells Python to skip this block of code.
@@ -57,7 +58,7 @@ while playerScore != 3 and cpuScore != 3:
     # ADD CODE HERE TO CHANGE DIFFICULTY BETWEEN EACH ROUND
 
     numGuesses = 0
-    for guesses in range(3):
+    for guesses in range(3): # UPDATE THIS TO USE THE numAttempts VARIABLE INSTEAD OF A SPECIFIC VALUE. 
         print(f"You have {3 - numGuesses} guesses remaining.\n")
         playerGuess = int(input("Type a number from 0 to 20 and press ENTER.\n"))
         # input() saves all data as a STRING by default.
