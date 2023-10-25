@@ -24,13 +24,14 @@ def rollDice(numDice, sizeDice):
     sum = 0
     while numRolled < numDice:
         roll = random.randint(1, sizeDice)
+        sum += roll
         print(f"Roll: {roll}\n")
         print(f"Sum: {roll}\n")
         numRolled += 1
+    return sum # return will IMMEDIATELY exit a loop, function, if/elif/else block.
 
-rollDice(3, 6)
+# rollDice(3, 6)
 # rollDice(1, 20)
-
 
 strengthPlayer = rollDice(3, 6)
 dexterityPlayer = rollDice(3, 6)
@@ -39,3 +40,14 @@ wisdomPlayer = rollDice(3, 6)
 print(strengthPlayer)
 print(dexterityPlayer)
 print(wisdomPlayer)
+
+def genStats():
+    playerStats = [0, 0, 0, 0, 0, 0, 0]
+    i = 0
+    while i < len(playerStats):
+        playerStats[i] = rollDice(3, 6) # STRENGTH
+        i += 1
+
+    print(playerStats)
+
+genStats()
