@@ -80,6 +80,57 @@ def getGuess(alreadyGuessed):
             print('Please guess a LETTER from the Englsih alphabet.')
         else:
             return guess
+        
+def playAgain():
+    print('Do you want to play again? Yes or No?')
+    return input().lower().startwith('y')
+
+# Introduce the game
+print('Welcome to Hangman by Ryan K.')
+missedLetters = ''
+correctLetters = ''
+secretWord = getRandomWord(words)
+gameIsDone = False
+
+# Main game loop
+while True:
+    displayBoard(missedLetters, correctLetters, secretWord)
+
+    guess = getGuess(missedLetters + correctLetters)
+
+    if guess is secretWord:
+        correctLetters = correctLetters + guess
+
+        # Check to see if winner, winner chicken dinner
+        foundAllLetters = True
+        for i in range(len(secretWord)):
+            if secretWord[i] not in correctLetters:
+                foundAllLetters = False
+                break
+            if foundAllLetters: # if True
+                print('Much wow! Very win! Well done.')
+                print('The secret word was' + secretWord)
+                gameIsDone = True
+    else:
+        missedLetters = missedLetters + guess
+        
+        if len(missedLetters) == len(HANGMAN_BOARD) - 1:
+            displayBoard(missedLetters, correctLetters, secretWord)
+            print('You dont have anymore guesses and u took a L twin.')
+            print('You mad this number of correct guesses ' + str(len(correctLetters)))
+            print('The secret word was ' + secretWord)
+            gameIsDone = True
+
+    if gameIsDone:
+        if playAgain():
+            missedLetters = ''
+            correctLetters = ''
+            gameIsDone = False
+            secretWord = getRandomWord(words)
+        else:
+            break
+
+
 
 # i = 0
 # while i < 100:
