@@ -66,6 +66,21 @@ def displayBoard(missedLetters, correctLetters, secretWord):
         print(letter, end = ' ')
     print()
 
+
+def getGuess(alreadyGuessed):
+    while True:
+        print('Please pick a letter from A to Z and hit Enter.')
+        guess = input()
+        guess = guess.lower()
+        if len(guess) != 1:
+            print('Please enter a single letter.')
+        elif guess in alreadyGuessed:
+            print('Letter has been guessed already, try again.')
+        elif guess not in 'abcdefghijklmnopqrstuvwxyz':
+            print('Please guess a LETTER from the Englsih alphabet.')
+        else:
+            return guess
+
 # i = 0
 # while i < 100:
 #        word = getRandomWord(words)
