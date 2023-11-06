@@ -1,8 +1,17 @@
 # Hangman game by Aziah Hill, v0.0
 import random
-words = 'chicken apple ugly nugget wild bad good something nothing want calm furious joy reveal blue purple yellow green red hot cold cool son mom dad uncle cousin aunt dry wet.'.split()
-print(words)
-# VARIABLE_NAMES IN ALL CAPS ARE CONSTANTS AND NOT MEANT TO CHANGE!
+# words = 'chicken apple ugly nugget wild bad good something nothing want calm furious joy reveal blue purple yellow green red hot cold cool son mom dad uncle cousin aunt dry wet.'.split()
+# DICTIONARY VERSION
+# stored in key: value pairs.
+# Actual Dictionary Word (Key) : Value (Definition)
+# Uses {} to specify a dictionary
+words = {'Colors': 'red orange yellow green blue indigo violet teal gold black white silver fushia'.split(),
+        'Animals': 'cat cow dog moose goose fish wombat wolverine giraffe hippo lion alligator'.split(),
+        'Shapes': 'square triangle rectangle circle rhombas parallelogram trapezoid diamond rectangle'.split(),
+        'Food': 'hamburger hotdog potato waffle pancake eggs steak salmon donut'.split()}
+
+
+# VARIABLE_NAMES in ALL CAPS ARE CONSTANTS AND NOT MEANT TO CHANGE!
 HANGMAN_BOARD = ['''
     +---+
         |
