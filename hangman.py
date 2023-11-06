@@ -47,13 +47,19 @@ HANGMAN_BOARD = ['''
     O   |
    /|\  |
    / \  |
-    =======''']
+    =======''',]
    
-# Pick Word from list
-def getRandomWord(wordList): # Return a random word from the list.
-    wordIndex = random.randint(0, len(wordList) - 1)
-    # len(listName) - 1 is EXTREMELY COMMON FOR WORKING WITH LISTS.
-    return wordList[wordIndex]
+# Pick Word from list 
+# def getRandomWord(wordList): # Return a random word from the list.
+#    wordIndex = random.randint(0, len(wordList) - 1)
+#    # len(listName) - 1 is EXTREMELY COMMON FOR WORKING WITH LISTS.
+#   return wordList[wordIndex]
+
+# Pick word from dictionary
+def getRandomWord(wordDict): # Return a random word from the list.
+    wordKey = random.choice(list(wordDict.keys()))
+    wordIndex = random.randint(0, len(wordDict[wordKey]) - 1)
+    return [wordDict[wordKey][wordIndex], wordKey] 
 
 def displayBoard(missedLetters, correctLetters, secretWord):
     print(HANGMAN_BOARD[len(missedLetters)])
@@ -74,7 +80,6 @@ def displayBoard(missedLetters, correctLetters, secretWord):
     for letter in blanks:
         print(letter, end = ' ')
     print()
-
 
 def getGuess(alreadyGuessed):
     while True:
@@ -106,40 +111,61 @@ while True:
     displayBoard(missedLetters, correctLetters, secretWord)
 
     guess = getGuess(missedLetters + correctLetters)
+# Introduce the Game
+print('Welcome to Hangman by Aziah H')
 
-    if guess is secretWord:
+# Choose Difficulty
+difficulty = 'X'
+while difficulty not in 'EMH':
+    print('Please choose Easy, Medium or Hard. Type first letter then press enter.\n')
+    difficulty = input().upper()
+if difficulty == 'M': #Medium
+    del HANGHMAN_BOARD[8]
+    del HANGMAN_BOARD[7]
+if difficulty == 'H': #Hard
+    del HANGHMAN_BOARD[8]
+    del HANGMAN_BOARD[7]
+    del HANGMAN_BOARD[5]
+    del HANGMAN_BOARD[3]
+
+    guess = getGuess(missedLetters + correctLetters)
+
+while True:
+    print('The secret word is from the ' + secretSet + ' categpry.\n')
+    displayBoard(missedLetters, correctLetters, secretWord)
+
+    guess = getGuess(missedLetters + correctLetters)
+
+    if guess in secretWord:
         correctLetters = correctLetters + guess
 
-        # Check to see if winner, winner chicken dinner
+        # Check To see if winner, winner chicken dinner
         foundAllLetters = True
         for i in range(len(secretWord)):
             if secretWord[i] not in correctLetters:
                 foundAllLetters = False
                 break
-            if foundAllLetters: # if True
-                print('Much wow! Very win! Well done.')
+            if foundAllLetters:   # if True
+                print('Much wow! Very Win! Well Done.')
                 print('The secret word was' + secretWord)
-                gameIsDone = True
+                gameIsDone =True
     else:
         missedLetters = missedLetters + guess
-        
+
         if len(missedLetters) == len(HANGMAN_BOARD) - 1:
             displayBoard(missedLetters, correctLetters, secretWord)
-            print('You dont have anymore guesses and u took a L twin.')
-            print('You mad this number of correct guesses ' + str(len(correctLetters)))
-            print('The secret word was ' + secretWord)
+            print('You have ran out of guess attempts and lost the game.')
+            print('You have made this number of correct guesses ' + str(len(correctLetters)))
             gameIsDone = True
 
-    if gameIsDone:
-        if playAgain():
-            missedLetters = ''
-            correctLetters = ''
-            gameIsDone = False
-            secretWord = getRandomWord(words)
-        else:
-            break
-
-
+if gameIsDone:
+    if playAgain():
+        missedLetters = ''
+        correctLetters = ''
+        gameIsDone = False
+        secretWord=getRandomWord(words)
+    else:
+        break
 
 # i = 0
 # while i < 100:
