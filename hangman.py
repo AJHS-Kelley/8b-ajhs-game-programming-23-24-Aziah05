@@ -1,4 +1,4 @@
-# Hangman game by Aziah Hill, v0.0
+# Hangman game done by Aziah Hill, v0.0
 import random
 # words = 'chicken apple ugly nugget wild bad good something nothing want calm furious joy reveal blue purple yellow green red hot cold cool son mom dad uncle cousin aunt dry wet.'.split()
 # DICTIONARY VERSION
