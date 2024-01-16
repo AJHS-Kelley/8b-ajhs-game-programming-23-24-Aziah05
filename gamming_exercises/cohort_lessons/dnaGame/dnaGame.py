@@ -24,8 +24,7 @@ def genDNA() -> str:
     
 dna = genDNA()
 
-
-def genRNA(dnaSequence: str) -> tuple:
+def doTranscription(dnaSequence: str) -> tuple:
     print(f"The DNA Sequence is {dnaSequence}.\n")
     print("You will now geberate the RNA sequence that would match.\n")
     print("Please remember, in the RNA sequence U pairs with A from the DNA sequence.\n")
@@ -38,5 +37,57 @@ def genRNA(dnaSequence: str) -> tuple:
     # Tuples are UNCHANGABLE -- you cannot add, modify, or delete after creating
     # Tuples can have duplicate values.
 
-rna = genRNA(dna)
-print(rna)
+def verifySequence(dnaSequence: str, rnaSequence: str) -> bool:
+    isMatch = False
+    if len(dnaSequence) != len(rnaSequence):
+        print("The sequences are different lengths and cannot match.\n")
+        return isMatch
+    for dnaBase, rnaBase in zip(dnaSequence, rnaSequence):
+        if dnaBase == "A" and rnaBase == "U":
+            isMatch = True
+        elif dnaBase == "C" and rnaBase == "C":
+            isMatch = True
+        elif dnaBase == "G" and rnaBase == "C":
+            isMatch = True
+        elif dnaBase == "T" and rnaBase =="A":
+            isMatch = True
+        else:
+            print ("Unble to identify corect base so no match")
+    return isMatch
+
+def calcScore(rnaSequence: str, rnaTime: float) -> int:
+    score = 0
+    if rnaTime < 1.0:
+        score +- 1000000
+    elif rnaTime < 5.0:
+        score += 900000
+    elif rnaTime < 15.0:
+        score += 700000
+    elif rnaTime < 25.0:
+        score += 500000
+    else: # Shortest Sequence, Lowest Multiplier
+        score += 250000
+
+    scoreMulti = 0.0
+    if len(rnaSequence) >= 30:
+        scoreMulti = 5.0
+    elif len(rnaSequence) >= 25:
+        scoreMulti = 4.0
+    elif len(rnaSequence) >= 20:
+        scoreMulti =3.0
+    elif len(rnaSequence) >= 15:
+        scoreMulti = 2.0
+    elif len(rnaSequence) >= 5:
+        scoreMulti = 1.0
+    else: # Shortest Sequence, Lowest Multiplier
+        scoreMulti = 0.5
+        
+    score *= scoreMulti
+    return score
+    
+
+dna = genDNA()
+rna = doTranscription(dna)
+print(verifySequence(dna, rna[0]))
+
+print(calcScore(rna[0], rna[1]))
