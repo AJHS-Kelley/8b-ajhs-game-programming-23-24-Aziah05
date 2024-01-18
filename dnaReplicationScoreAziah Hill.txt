@@ -1,0 +1,12 @@
+DNA Sequence: AGG
+RNA Sequence: UCC
+Transcription Time: 16.807830095291138
+Score: 250000.0
+Aziah Hill
+2024-01-18 14:43:43.310123
+DNA Sequence: GGT
+RNA Sequence: CCA
+Transcription Time: 5.134803771972656
+Score: 350000.0
+Aziah Hill
+2024-01-18 14:44:53.802305

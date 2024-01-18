@@ -15,14 +15,13 @@ def gameIntro() -> None:
 
 def genDNA() -> str:
     basesGenerated = 0
-    basesRequested = int(input("Please enter a positive integer"))
+    basesRequested = int(input("Please enter a positive integer.\n"))
     dnaSequence = ""
     while basesGenerated < basesRequested:
         dnaSequence += choice(dnaBases)
         basesGenerated += 1
     return dnaSequence
-    
-dna = genDNA()
+
 
 def doTranscription(dnaSequence: str) -> tuple:
     print(f"The DNA Sequence is {dnaSequence}.\n")
@@ -52,7 +51,7 @@ def verifySequence(dnaSequence: str, rnaSequence: str) -> bool:
         elif dnaBase == "T" and rnaBase =="A":
             isMatch = True
         else:
-            print ("Unble to identify corect base so no match")
+            print ("Unable to identify corect base so no match")
     return isMatch
 
 def calcScore(rnaSequence: str, rnaTime: float) -> int:
@@ -78,24 +77,35 @@ def calcScore(rnaSequence: str, rnaTime: float) -> int:
     elif len(rnaSequence) >= 15:
         scoreMulti = 2.0
     elif len(rnaSequence) >= 5:
-        scoreMulti = 1.0
+        scoreMulti = 1.012
     else: # Shortest Sequence, Lowest Multiplier
         scoreMulti = 0.5
         
     score *= scoreMulti
     return score
     
-def saveScore(dnaSequence: str, rnaSequence: str, rnaTime: float) -> None:
+def saveScore(dnaSequence: str, rnaSequence: str, rnaTime: float, score: int) -> None:
     playerName = input("What is your first name?\n")
-    lastName = input("What is your name?\n")
+    lastName = input("What is your last name?\n")
     fullName = playerName + " " + lastName
 
     fileName = "dnaReplicationScore" + fullName + ".txt"
+    saveData = open(fileName, "a")
+    # File Modes
+    # "x" mode -- CREATE FILE, IF FILE EXISTS, EXIT WITH ERROR
+    # "W" mode -- CREATE FILE, IF FILE EXISTS, OVERWRITE IT
+    # "a" mode -- CREATE FILE, IF FILE EEXISTS, APPEND TO IT
+    saveData.write(f"DNA Sequence: {dnaSequence}\nRNA Sequence: {rnaSequence}\n")
+    saveData.write(f"Transcription Time: {rnaTime}\n")
+    saveData.write(f"Score: {score}\n")
+    saveData.write(f"{fullName}\n")
+    saveData.write(f"{datetime.datetime.now()}\n")
+    saveData.close()
 
 
 
 dna = genDNA()
 rna = doTranscription(dna)
-print(verifySequence(dna, rna[0]))
-
-print(calcScore(rna[0], rna[1]))
+if verifySequence(dna, rna[0]):
+    score = (calcScore(rna[0],rna[1]))
+    saveScore(dna, rna[0], rna[1], score)
