@@ -5,7 +5,6 @@ import sys, random, pygame
 
 from pygame.locals import *
 # Allows us to call functions from pygame using just the function name instead of modules.function()
-# Example: We can use draw() instead of pygame.draw()
 
 # Constants for Game Board
 BOARDWIDTH = 4 # COLUMNS
@@ -23,3 +22,25 @@ WHITE = (255, 255, 255)
 BRIGHTBLUE = (0, 50, 255)
 DARKTURQUOISE = (3, 54, 73)
 GREEN = (0, 204, 0)
+
+# BOARD DESIGN SETUP
+BGCOLOR = DARKTURQUOISE
+TILECOLOR = GREEN
+TEXTCOLOR = WHITE
+BORDERCOLOR = BRIGHTBLUE
+BASICFONTSIZE = 20 # pixels
+
+# BUTTON SETUP
+BUTTONCOLOR = WHITE
+BUTTONTEXTXOLOR = BLACK
+MESSAGECOLOR = WHITE
+
+# ESTABLISH WINDOW MARGINS
+XMARGIN = int((WINDOWWIDTH - (TILESIZE * BOARDWIDTH + (BOARDWIDTH -1))) / 2)
+YMARGIN = int((WINDOWHEIGHT - (TILESIZE * BOARDHEIGHT + (BOARDHEIGHT -1))) / 2)
+
+# Directions
+UP = 'up'
+DOWN = 'down'
+LEFT = 'left'
+RIGHT = 'right'
