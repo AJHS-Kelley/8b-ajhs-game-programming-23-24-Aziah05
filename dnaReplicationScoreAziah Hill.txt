@@ -10,6 +10,7 @@ Transcription Time: 5.134803771972656
 Score: 350000.0
 Aziah Hill
 2024-01-18 14:44:53.802305
+<<<<<<< Updated upstream
 DNA Sequence: GACCACG
 RNA Sequence: CUGGUGC
 Transcription Time: 25.799744129180908
@@ -28,3 +29,17 @@ Transcription Time: 10.935441255569458
 Score: 708400.0
 Aziah Hill
 2024-02-05 13:59:14.469904
+=======
+DNA Sequence: AAGA
+RNA Sequence: UUCU
+Transcription Time: 12.613509893417358
+Score: 350000.0
+Aziah Hill
+2024-02-05 13:30:18.535254
+DNA Sequence: GTC
+RNA Sequence: CAG
+Transcription Time: 8.558951616287231
+Score: 350000.0
+Aziah Hill
+2024-02-05 13:35:09.382378
+>>>>>>> Stashed changes
