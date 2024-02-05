@@ -1,4 +1,6 @@
 # DNA Replication Game, Aziah Hill, v0.0
+# Code is not identiftying matches correctly. 
+# Code does not exit correctly when finished. 
 
 # Import Entire Modules -- Get the whole tool box.
 import time, datetime

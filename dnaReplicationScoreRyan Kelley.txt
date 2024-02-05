@@ -1,0 +1,6 @@
+DNA Sequence: CGATC
+RNA Sequence: GCUAG
+Transcription Time: 6.6791770458221436
+Score: 708400.0
+Ryan Kelley
+2024-02-05 13:05:18.488319
