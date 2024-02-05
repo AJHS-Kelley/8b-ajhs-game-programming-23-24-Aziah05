@@ -104,6 +104,7 @@ def saveScore(dnaSequence: str, rnaSequence: str, rnaTime: float, score: int) ->
     saveData.write(f"{datetime.datetime.now()}\n")
     saveData.close()
 
+
 dna = genDNA()
 rna = doTranscription(dna)
 if verifySequence(dna, rna[0]):
