@@ -5,7 +5,7 @@
 # Import Entire Modules -- Get the whole tool box.
 import time, datetime
 
-# Import Specific Methods -- Get the s[ecific tool.
+# Import Specific Methods -- Get the specific tool.
 from random import choice
 
 # Store the DNA Bases
@@ -46,7 +46,7 @@ def verifySequence(dnaSequence: str, rnaSequence: str) -> bool:
     for dnaBase, rnaBase in zip(dnaSequence, rnaSequence):
         if dnaBase == "A" and rnaBase == "U":
             isMatch = True
-        elif dnaBase == "C" and rnaBase == "C":
+        elif dnaBase == "C" and rnaBase == "G":
             isMatch = True
         elif dnaBase == "G" and rnaBase == "C":
             isMatch = True
@@ -103,8 +103,6 @@ def saveScore(dnaSequence: str, rnaSequence: str, rnaTime: float, score: int) ->
     saveData.write(f"{fullName}\n")
     saveData.write(f"{datetime.datetime.now()}\n")
     saveData.close()
-
-
 
 dna = genDNA()
 rna = doTranscription(dna)

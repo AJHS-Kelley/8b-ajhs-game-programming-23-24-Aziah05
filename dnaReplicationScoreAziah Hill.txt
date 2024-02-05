@@ -10,3 +10,21 @@ Transcription Time: 5.134803771972656
 Score: 350000.0
 Aziah Hill
 2024-01-18 14:44:53.802305
+DNA Sequence: GACCACG
+RNA Sequence: CUGGUGC
+Transcription Time: 25.799744129180908
+Score: 253000.0
+Aziah Hill
+2024-02-05 13:48:03.574094
+DNA Sequence: GAC
+RNA Sequence: CUG
+Transcription Time: 18.67090940475464
+Score: 250000.0
+Aziah Hill
+2024-02-05 13:53:16.677626
+DNA Sequence: TATCG
+RNA Sequence: AUAGC
+Transcription Time: 10.935441255569458
+Score: 708400.0
+Aziah Hill
+2024-02-05 13:59:14.469904

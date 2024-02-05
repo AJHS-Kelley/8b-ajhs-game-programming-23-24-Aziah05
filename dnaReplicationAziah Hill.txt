@@ -1,0 +1,6 @@
+DNA Sequence: T
+RNA Sequence: A
+Transcription Time: 6.415182828903198
+Score: 350000.0
+Aziah Hill
+2024-02-05 13:49:29.237130
