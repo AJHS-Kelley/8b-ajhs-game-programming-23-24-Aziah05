@@ -1,6 +1,8 @@
 import pygame
 from sys import exit
 
+# Please get caught up.  You are almost finished, you may need to do additional work outside of classtime. 
+
 pygame.init()
 screen = pygame.display.set_mode((800,400))
 pygame.display.set_caption('Runner')
