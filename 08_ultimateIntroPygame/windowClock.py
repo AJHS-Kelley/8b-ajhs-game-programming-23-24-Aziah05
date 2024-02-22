@@ -10,7 +10,7 @@ test_font = pygame.font.Font(None, 50)
 sky_surface = pygame.image.load('img/ultimatePygame/Sky.png').convert()
 ground_surface = pygame.image.load('img/ultimatePygame/ground.png').convert()
 
-score_surface = test_font.render('My game', False, 'Black')
+score_surface = test_font.render('My game', False, (64,64,64))
 score_rect = score_surface.get_rect(center = (400,50))
 
 
@@ -27,15 +27,27 @@ while True:
             exit()
         # if event.type == pygame.MOUSEMOTION:
         #   if player_rect.collidepoint(event.pos): print('collision')
+        if event.type == pygame.KEYDOWN:
+            if event.key == pygame.K_SPACE:
+                print('jump')
+
+        if event.type == pygame.KEYUP:
+            print('key up')
     
     screen.blit(sky_surface,(0,0))
     screen.blit(ground_surface,(0,300))
+    pygame.draw.rect(screen,'#c0e8ec',score_rect)
+    pygame.draw.rect(screen,'#c0e8ec',score_rect,10)
     screen.blit(score_surface,score_rect)
     
     snail_rect.x -= 4
-    if snail_rect.right <= -100: snail_rect.left = 800
+    if snail_rect.right <= 0: snail_rect.left = 800
     screen.blit(snail_surface,snail_rect)
     screen.blit(player_surface,player_rect)
+
+    keys = pygame.key.get_pressed()
+    if keys[pygame.K_SPACE]:
+        print('jump')
     
     # if player_rect.colliderect(snail_rect):
     #    print('collision')
@@ -47,3 +59,5 @@ while True:
     
     pygame.display.update()
     clock.tick(60)
+
+    #1:35:04 left off on video
