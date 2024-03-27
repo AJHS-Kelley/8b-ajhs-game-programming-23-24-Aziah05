@@ -1,6 +1,24 @@
-Game Genre / Type: 
-Theme: 
+Game Genre / Type: Flappy Bird
+Theme: Vibrant skies    
 
-Win Condition(s): 
-Lose Condition(s): 
+Win Condition(s): Dont hit the floor and pillars
+Lose Condition(s): You hit the floor or pillar
 
+Levels / Screens:
+    -- 
+    -- 
+
+Objectives / Enemies / Obstacles:
+    -- Pillars, Trees, Rocks,
+
+Items / Equipment / Objects:
+    -- Power-Ups(Temporary invincibility, etc.)
+    --
+
+Difficulty Changes:
+    -- More pillars appear
+    -- increase speed that bird moves at
+
+Controls:
+    -- up key and down key or W or S
+    -- if a powerup is added then click F to trigger it
