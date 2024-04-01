@@ -18,3 +18,21 @@ if b >= c:
 if b <= a:
     b, a = a, b
 print(f"a: {a} b: {b} c: {c}")
+
+# input the string variable
+# determine order of A, B, and C
+# create cprrect string
+# output string
+
+order = input()
+myString = ""
+
+for i in range(len(order)): 
+    if order[i] == "A":
+        myString += str(a) + " "
+    elif order[i] == "B":
+        myString += str(b) + " "
+    elif: 
+        myString += str(c) + " "
+
+print(myString)
