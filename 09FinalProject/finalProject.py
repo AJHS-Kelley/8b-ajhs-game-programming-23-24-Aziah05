@@ -1,10 +1,17 @@
 # Final Project, Hill Aziah, v0.0
-import sys, random, pygame
+import pygame
+from sys import exit
+
+pygame.init()
+screen = pygame.display.set_mode((800,400))
+pygame.display.set_caption('Runner')
+clock = pygame.time.Clock()
+
+# Be sure to put the images your using inside of the FIRST SET of parentheses
+sky_surface = pygame.image.load()()
+ground_surface = pygame.image.load()()
 
 resolution = 0 # = Low Resolution (800, 600), 1 = High Resolution (1920, 1080)
-
-screen = pygame.display.set_mode((x, y))
-# CREAT AN if / else BLOCK TO SET RESOLUTION BASED ON THE VARIABLE ABOVE.
 
 if resolution == 0:
     x = 800
