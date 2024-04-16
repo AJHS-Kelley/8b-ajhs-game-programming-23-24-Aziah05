@@ -1,24 +1,66 @@
-Game Genre / Type: Flappy Bird
-Theme: Vibrant skies    
+Game Genre / Type: Snake Game
+Theme: Black background
 
-Win Condition(s): Dont hit the floor and pillars
-Lose Condition(s): You hit the floor or pillar
+Win Condition(s): Make the snake longer
+Lose Condition(s): Hitting the walls
 
 Levels / Screens:
     -- 
     -- 
 
 Objectives / Enemies / Obstacles:
-    -- Pillars, Trees, Rocks,
+    -- Four walls
 
 Items / Equipment / Objects:
-    -- Power-Ups(Temporary invincibility, etc.)
-    --
+    -- Power-Ups: temporary invincibility, extra blocks to increase snake length
+    -- 
 
 Difficulty Changes:
-    -- More pillars appear
-    -- increase speed that bird moves at
+    -- 
+    -- increase speed that snake moves at
 
 Controls:
-    -- up key and down key or W or S
-    -- if a powerup is added then click F to trigger it
+    -- <, >, ^, v = left, right, up and down keys
+    -- W, S, A, D
+
+
+Back up incase i change my mind:
+# Final Project, Hill Aziah, v0.0
+import pygame
+from sys import exit
+
+pygame.init()
+screen = pygame.display.set_mode((800,400))
+pygame.display.set_caption('Runner')
+clock = pygame.time.Clock()
+test_font = pygame.font.Font(None, 50)
+
+# Be sure to put the images your using inside of the FIRST SET of parentheses
+sky_surface = pygame.image.load()()
+ground_surface = pygame.image.load()()
+
+score_surface = test_font.render('My game', False, (64,64,64))
+score_rect = score_surface.get_rect(center = (400,50))
+
+bird_surface = pygame.image.load('img/ultimatePygame/snail1.png').convert_alpha()
+bird_rect = bird_surface.get_rect(bottomright = (600,300))
+
+resolution = 0 # = Low Resolution (800, 600), 1 = High Resolution (1920, 1080)
+
+if resolution == 0:
+    x = 800
+    y = 600
+else:
+    x = 1920
+    y = 1080
+
+pygame.init()
+
+def getDifficulty():
+    difficulty = int(input("Please choose a difficulty. Enter 1 for EASY or 2 for HARD.\n"))
+    if difficulty == 1:
+        pygame.display.set_caption('NAME OF GAME -- EASY')
+    else:
+        pygame.display.set_caption('NAME OF GAME -- HARD')
+
+screen = pygame.display.set_mode((x, y))
