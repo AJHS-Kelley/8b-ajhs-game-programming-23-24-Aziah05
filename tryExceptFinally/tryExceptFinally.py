@@ -3,7 +3,7 @@
 
 try: # the code in this block is always executed
     myVariable = 1
-    print(myVariabl)
+    print(myVariable)
 except NameError: # This code will run if there is an error
     print("There is an incorrect variable name in your code.")
 except: # this code will run if there is an error (exception)
