@@ -1,6 +1,12 @@
 import pygame as pg
 from random import randrange
 
+# Code Review -- -04/25/24
+# Add the code to display a title screen. 
+# Add the code to switch between title screen and game screen. 
+# Add the code to display the first game screen. 
+
+
 WINDOW = 800
 TILE_SIZE = 50
 RANGE = (TILE_SIZE // 2, WINDOW - TILE_SIZE // 2, TILE_SIZE)
@@ -26,3 +32,5 @@ while True:
                 snake_dir = (0, TILE_SIZE)
             if event.key == pg.K_d:
                 snake_dir - (0, TILE_SIZE)
+
+
